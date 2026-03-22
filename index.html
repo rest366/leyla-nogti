@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Профессиональный маникюр и педикюр в Казани. Салон Изумруд, ЖК Изумрудный город. Стерильность, качество, индивидуальный подход. Рейтинг 5.0 на Авито.">
+    <title>Leyla Nogti — Маникюр и Педикюр в Казани | Салон Изумруд</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --emerald: #50C878;
+            --emerald-dark: #3FA368;
+            --emerald-light: #7FD99F;
+            --gold: #D4AF37;
+            --gold-light: #F4E4C1;
+            --gold-dark: #B8941F;
+            --cream: #FFF9F0;
+            --cream-dark: #F5EFE6;
+            --white: #FFFFFF;
+            --text-dark: #2C2C2C;
+            --text-gray: #666666;
+            --text-light: #999999;
+            --shadow: rgba(80, 200, 120, 0.15);
+            --shadow-gold: rgba(212, 175, 55, 0.15);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--cream);
+            overflow-x: hidden;
+        }
+
+        /* Логотип */
+        .logo {
+            font-family: 'Cormorant', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg, var(--emerald), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo::after {
+            content: '✨';
+            position: absolute;
+            right: -25px;
+            top: -5px;
+            font-size: 1rem;
+            background: none;
+            -webkit-text-fill-color: var(--gold);
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px var(--shadow);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        /* Text Underline Effect для навигации */
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, var(--emerald), var(--gold));
+            bottom: -5px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease-out;
+        }
+
+        .nav-links a:hover {
+            color: var(--emerald-dark);
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--emerald), var(--emerald-dark));
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+
+        .btn-mobile {
+            display: none;
+        }
+
+        .btn-desktop {
+            display: inline;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--shadow);
+            background: linear-gradient(135deg, var(--emerald-dark), var(--emerald));
+        }
+
+        /* Hero Section - ДЕСКТОП с горизонтальным фото */
+        .hero {
+            margin-top: 80px;
+            position: relative;
+            padding: 6rem 2rem;
+            text-align: center;
+            overflow: hidden;
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            /* Десктоп: горизонтальное фото справа */
+            background: 
+                linear-gradient(
+                    110deg, 
+                    rgba(255, 249, 240, 0.97) 0%,
+                    rgba(255, 249, 240, 0.92) 45%,
+                    rgba(244, 228, 193, 0.78) 65%,
+                    rgba(127, 217, 159, 0.55) 100%
+                ),
+                url('images/hero-hand.jpg') right center / cover no-repeat;
+            background-blend-mode: overlay;
+        }
+
+        /* Дополнительный оверлей для читаемости текста и глубины */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(
+                ellipse at 30% 50%,
+                rgba(255, 249, 240, 0.5) 0%,
+                rgba(255, 249, 240, 0.2) 40%,
+                transparent 70%
+            );
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Дополнительное свечение для премиальности */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: 70%;
+            background: radial-gradient(
+                circle,
+                rgba(80, 200, 120, 0.06) 0%,
+                rgba(212, 175, 55, 0.04) 40%,
+                transparent 70%
+            );
+            z-index: 0;
+            pointer-events: none;
+            filter: blur(60px);
+        }
+
+        /* Animated Dots Background */
+        .dots-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .dot {
+            position: absolute;
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .dot:nth-child(1) { width: 4px; height: 4px; background: var(--emerald); opacity: 0.2; top: 10%; left: 15%; animation-delay: 0s; }
+        .dot:nth-child(2) { width: 6px; height: 6px; background: var(--gold); opacity: 0.15; top: 20%; left: 80%; animation-delay: 0.5s; }
+        .dot:nth-child(3) { width: 3px; height: 3px; background: var(--emerald-light); opacity: 0.25; top: 35%; left: 25%; animation-delay: 1s; }
+        .dot:nth-child(4) { width: 5px; height: 5px; background: var(--gold-light); opacity: 0.2; top: 45%; left: 70%; animation-delay: 1.5s; }
+        .dot:nth-child(5) { width: 4px; height: 4px; background: var(--emerald); opacity: 0.15; top: 60%; left: 40%; animation-delay: 2s; }
+        .dot:nth-child(6) { width: 6px; height: 6px; background: var(--gold); opacity: 0.18; top: 70%; left: 85%; animation-delay: 2.5s; }
+        .dot:nth-child(7) { width: 3px; height: 3px; background: var(--emerald-light); opacity: 0.22; top: 80%; left: 20%; animation-delay: 0.8s; }
+        .dot:nth-child(8) { width: 5px; height: 5px; background: var(--gold-light); opacity: 0.2; top: 90%; left: 60%; animation-delay: 1.8s; }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.35; transform: scale(1.3); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--emerald-dark);
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 15px rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95);
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            flex-wrap: nowrap;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.2rem 1.8rem;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 20px;
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(15px);
+            white-space: nowrap;
+        }
+
+        .badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px var(--shadow);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .badge-icon {
+            font-size: 1.8rem;
+        }
+
+        .badge strong {
+            display: block;
+            color: var(--emerald-dark);
+            font-size: 1rem;
+        }
+
+        .badge small {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        /* Section Title с underline effect */
+        .section-title {
+            text-align: center;
+            font-family: 'Cormorant', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            color: var(--emerald-dark);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--emerald), var(--gold));
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 5px 25px var(--shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-top: 3px solid var(--emerald);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(80, 200, 120, 0.1), 
+                transparent
+            );
+            transition: left 0.5s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px var(--shadow);
+            border-top-color: var(--gold);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant', serif;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--emerald-dark);
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .service-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin: 1.5rem 0;
+            font-family: 'Cormorant', serif;
+        }
+
+        .service-card .duration {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        /* Advantages Section */
+        .advantages {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.9), 
+                rgba(244, 228, 193, 0.3)
+            );
+            padding: 5rem 2rem;
+            margin: 5rem 0;
+        }
+
+        .advantages-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .advantage-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .advantage-item:hover {
+            background: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .advantage-icon {
+            font-size: 4rem;
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+
+        .advantage-item h3 {
+            color: var(--emerald);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .advantage-item p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 2rem;
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: white;
+            padding: 2rem 3rem;
+            border-radius: 25px;
+            box-shadow: 0 8px 30px var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .rating-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #00C257;
+            font-family: 'Cormorant', serif;
+        }
+
+        .rating-stars {
+            font-size: 2rem;
+            color: #FFD700;
+            letter-spacing: 2px;
+        }
+
+        .rating-text {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-top: 0.5rem;
+        }
+
+        .avito-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #0066CC, #0099FF);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+        }
+
+        .avito-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.4);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 2rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--emerald-light), var(--gold-light));
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px var(--shadow);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 15px 40px var(--shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        /* Booking Section */
+        .booking {
+            max-width: 600px;
+            margin: 5rem auto;
+            padding: 3rem 2.5rem;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 10px 50px var(--shadow);
+        }
+
+        .booking h2 {
+            text-align: center;
+            font-family: 'Cormorant', serif;
+            color: var(--emerald-dark);
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .booking-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-btn {
+            padding: 1.3rem;
+            border: none;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .phone-btn {
+            background: linear-gradient(135deg, #00C853, #00A047);
+        }
+
+        .telegram-btn {
+            background: linear-gradient(135deg, #0088cc, #0077b5);
+        }
+
+        .avito-btn {
+            background: linear-gradient(135deg, #0066CC, #0099FF);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Map Section */
+        .map-section {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 2rem;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 500px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px var(--shadow);
+            margin-top: 3rem;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* OS Dock для социальных сетей */
+        .social-dock {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            gap: 0.8rem;
+            box-shadow: 0 8px 30px var(--shadow);
+            margin: 2rem auto;
+            max-width: fit-content;
+        }
+
+        .social-dock-item {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            background: white;
+            border: 2px solid #f0f0f0;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            transform-origin: bottom;
+        }
+
+        /* Логотипы социальных сетей */
+        .social-icon-telegram,
+        .social-icon-vk,
+        .social-icon-avito {
+            width: 24px;
+            height: 24px;
+            display: block;
+        }
+
+        .social-dock-item.telegram {
+            background: linear-gradient(135deg, #0088cc, #0077b5);
+            border: none;
+        }
+
+        .social-dock-item.vk {
+            background: linear-gradient(135deg, #0077FF, #0066CC);
+            border: none;
+        }
+
+        .social-dock-item.avito {
+            background: linear-gradient(135deg, #0066CC, #0099FF);
+            border: none;
+        }
+
+        .social-dock:hover .social-dock-item {
+            --scale: 1;
+        }
+
+        .social-dock-item:hover {
+            --scale: 1.5 !important;
+            z-index: 10;
+        }
+
+        .social-dock-item:has(+ .social-dock-item:hover),
+        .social-dock-item:hover + .social-dock-item {
+            --scale: 1.3;
+        }
+
+        .social-dock-item {
+            transform: scale(var(--scale, 1)) translateY(calc((1 - var(--scale, 1)) * 20px));
+        }
+
+        .social-dock-item::after {
+            content: attr(data-label);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            background: var(--text-dark);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .social-dock-item:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-5px);
+        }
+
+        /* Contacts Section */
+        .contacts {
+            background: linear-gradient(135deg, var(--emerald), var(--emerald-dark));
+            color: white;
+            padding: 5rem 2rem;
+        }
+
+        .contacts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item h3 {
+            font-family: 'Cormorant', serif;
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        .contact-item p,
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+            color: var(--gold-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2.5rem;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Кнопка "Наверх" */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--emerald), var(--emerald-dark));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: linear-gradient(135deg, var(--emerald-dark), var(--emerald));
+            box-shadow: 0 6px 30px var(--shadow);
+            transform: translateY(-3px);
+        }
+
+        .back-to-top:active {
+            transform: translateY(-1px);
+        }
+
+        .back-to-top svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Mobile responsive - МОБИЛЬНАЯ ВЕРСИЯ С ВЕРТИКАЛЬНЫМ ФОТО */
+        @media (max-width: 768px) {
+            /* Навигация */
+            .nav-links {
+                display: none;
+            }
+
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .cta-button {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+
+            /* Hero секция - МОБИЛЬНАЯ с вертикальным фото */
+            .hero {
+                padding: 3rem 1.5rem;
+                margin-top: 70px;
+                min-height: 600px;
+                align-items: flex-start;
+                
+                /* КЛЮЧЕВОЕ: используем вертикальное фото для мобильных */
+                background: 
+                    linear-gradient(
+                        to bottom, 
+                        rgba(255, 249, 240, 0.98) 0%,
+                        rgba(255, 249, 240, 0.96) 35%,
+                        rgba(244, 228, 193, 0.88) 60%,
+                        rgba(127, 217, 159, 0.65) 100%
+                    ),
+                    url('images/hero-hand-mobile.jpg') center center / cover no-repeat;
+                background-blend-mode: overlay;
+            }
+
+            /* Убираем декоративные псевдо-элементы на мобильном (они для десктопа) */
+            .hero::before,
+            .hero::after {
+                display: none;
+            }
+
+            .hero-content {
+                padding-top: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+                margin-bottom: 1rem;
+                line-height: 1.3;
+                text-shadow: 0 2px 10px rgba(255, 255, 255, 1);
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+                line-height: 1.5;
+                text-shadow: 0 1px 5px rgba(255, 255, 255, 1);
+            }
+
+            .hero .cta-button {
+                font-size: 0.9rem !important;
+                padding: 1rem 1.5rem !important;
+                white-space: nowrap;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.4rem;
+            }
+
+            .btn-desktop {
+                display: none;
+            }
+
+            .btn-mobile {
+                display: inline;
+            }
+
+            /* Trust badges - вертикальный стек */
+            .trust-badges {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.8rem;
+                margin-top: 2rem;
+            }
+
+            .badge {
+                padding: 1rem 1.2rem;
+                justify-content: flex-start;
+                background: rgba(255, 255, 255, 0.98);
+                box-shadow: 0 3px 15px var(--shadow);
+            }
+
+            .badge-icon {
+                font-size: 1.5rem;
+            }
+
+            .badge strong {
+                font-size: 0.95rem;
+            }
+
+            .badge small {
+                font-size: 0.8rem;
+            }
+
+            /* Секции - компактные отступы */
+            .services,
+            .gallery,
+            .reviews,
+            .map-section {
+                margin: 3rem auto;
+                padding: 1.5rem;
+            }
+
+            .advantages {
+                padding: 3rem 1.5rem;
+                margin: 3rem 0;
+            }
+
+            /* Заголовки секций */
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+
+            /* УСЛУГИ - компактная карточная версия */
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+                border-radius: 15px;
+                display: grid;
+                grid-template-columns: auto 1fr;
+                grid-template-rows: auto auto auto;
+                gap: 0.8rem 1rem;
+                align-items: start;
+            }
+
+            .service-icon {
+                grid-row: 1 / 3;
+                font-size: 2.5rem;
+                margin-bottom: 0;
+            }
+
+            .service-card h3 {
+                grid-column: 2;
+                grid-row: 1;
+                font-size: 1.2rem;
+                margin-bottom: 0;
+                align-self: center;
+            }
+
+            .service-card .price {
+                grid-column: 2;
+                grid-row: 2;
+                font-size: 1.5rem;
+                margin: 0;
+                align-self: center;
+            }
+
+            .service-card p {
+                grid-column: 1 / -1;
+                grid-row: 3;
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin-bottom: 0.3rem;
+            }
+
+            .service-card .duration {
+                grid-column: 1 / -1;
+                grid-row: 4;
+                font-size: 0.8rem;
+                margin-top: 0;
+            }
+
+            /* ПРЕИМУЩЕСТВА - компактная версия 2 колонки */
+            .advantages-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .advantage-item {
+                padding: 1rem;
+                border-radius: 15px;
+            }
+
+            .advantage-icon {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .advantage-item h3 {
+                font-size: 0.95rem;
+                margin-bottom: 0.4rem;
+            }
+
+            .advantage-item p {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+
+            /* Отзывы */
+            .rating-badge {
+                padding: 1.5rem 2rem;
+                gap: 1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .rating-number {
+                font-size: 2.5rem;
+            }
+
+            .rating-stars {
+                font-size: 1.5rem;
+            }
+
+            .rating-text {
+                font-size: 1rem;
+            }
+
+            .avito-link {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            /* Галерея */
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+
+            .gallery-placeholder {
+                font-size: 3rem;
+            }
+
+            /* Форма записи */
+            .booking {
+                padding: 2rem 1.5rem;
+                margin: 3rem 1rem;
+            }
+
+            .booking h2 {
+                font-size: 1.8rem;
+            }
+
+            .contact-btn {
+                padding: 1rem;
+                font-size: 0.95rem;
+                white-space: nowrap;
+            }
+
+            .contact-btn .btn-desktop {
+                display: none;
+            }
+
+            .contact-btn .btn-mobile {
+                display: inline;
+            }
+
+            /* Карта */
+            .map-container {
+                height: 300px;
+                border-radius: 15px;
+            }
+
+            /* Social Dock - упрощенная версия */
+            .social-dock {
+                padding: 0.8rem;
+                gap: 0.6rem;
+            }
+
+            .social-dock-item {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+
+            .social-icon-telegram,
+            .social-icon-vk,
+            .social-icon-avito {
+                width: 26px;
+                height: 26px;
+            }
+
+            .social-dock-item::after {
+                display: none;
+            }
+
+            /* Контакты */
+            .contacts {
+                padding: 3rem 1.5rem;
+            }
+
+            .contacts-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-item h3 {
+                font-size: 1.3rem;
+            }
+
+            .contact-item p,
+            .contact-item a {
+                font-size: 0.95rem;
+            }
+
+            /* Footer */
+            footer {
+                padding: 2rem 1.5rem;
+            }
+
+            footer p {
+                font-size: 0.85rem;
+            }
+
+            /* Кнопка "Наверх" на мобильных */
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .back-to-top svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        /* Дополнительная оптимизация для очень маленьких экранов */
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 550px;
+            }
+
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            /* Преимущества в 1 колонку на маленьких экранах */
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Галерея в 1 колонку */
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading animation */
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Leyla Nogti</div>
+            <ul class="nav-links">
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#gallery">Портфолио</a></li>
+                <li><a href="#map">Как добраться</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+            <a href="#booking" class="cta-button">Записаться</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="dots-background">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Изысканный маникюр<br>в сердце Изумрудного города</h1>
+            <p class="hero-subtitle">Профессиональный уход за вашими ногтями с гарантией стерильности и безупречного качества</p>
+            <a href="tel:+79376260394" class="cta-button" style="font-size: 1.1rem; padding: 1.2rem 2.5rem;">
+                <span class="btn-desktop">📞 Позвонить: +7 937 626-03-94</span>
+                <span class="btn-mobile">📞 Позвонить</span>
+            </a>
+            
+            <div class="trust-badges">
+                <div class="badge">
+                    <span class="badge-icon">🔬</span>
+                    <div>
+                        <strong>100% стерильность</strong>
+                        <small>Медицинские стандарты</small>
+                    </div>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">⏱️</span>
+                    <div>
+                        <strong>1.5-2 часа</strong>
+                        <small>Комфортное время</small>
+                    </div>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">💎</span>
+                    <div>
+                        <strong>Премиум материалы</strong>
+                        <small>Качественные бренды</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="section-title">Наши услуги</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">💅</span>
+                <h3>Маникюр комбинированный</h3>
+                <p>Идеальная форма и гладкость без покрытия. Профессиональный уход за кутикулой и ногтевой пластиной</p>
+                <div class="price">1 000 ₽</div>
+                <p class="duration">⏱️ 1.5-2 часа</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">✨</span>
+                <h3>Маникюр с покрытием</h3>
+                <p>Однотонное покрытие с укреплением гелем для максимальной стойкости и защиты</p>
+                <div class="price">1 500 ₽</div>
+                <p class="duration">⏱️ 1.5-2 часа</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🦶</span>
+                <h3>Педикюр пальчиков</h3>
+                <p>Качественный уход за ногтями на ногах без покрытия. Аккуратность и комфорт</p>
+                <div class="price">1 200 ₽</div>
+                <p class="duration">⏱️ 45 мин.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">💎</span>
+                <h3>Педикюр с покрытием</h3>
+                <p>Стойкое покрытие для безупречного результата на несколько недель</p>
+                <div class="price">1 700 ₽</div>
+                <p class="duration">⏱️ 45 мин.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🎨</span>
+                <h3>Дизайн ногтей</h3>
+                <p>От минималистичного стиля до креативных художественных решений</p>
+                <div class="price">от 100 ₽</div>
+                <p class="duration">В зависимости от сложности</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🔧</span>
+                <h3>Ремонт ногтей</h3>
+                <p>Быстрое восстановление 2-3 поврежденных ногтей</p>
+                <div class="price">200 ₽</div>
+                <p class="duration">Экспресс-услуга</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🤍</span>
+                <h3>Френч</h3>
+                <p>Классический френч для создания элегантного образа</p>
+                <div class="price">+200 ₽</div>
+                <p class="duration">Дополнительная услуга</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="advantages">
+        <div class="advantages-container">
+            <h2 class="section-title">Почему выбирают меня</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <span class="advantage-icon">🔬</span>
+                    <h3>Медицинская стерильность</h3>
+                    <p>Все инструменты проходят полный цикл стерилизации по медицинским стандартам. Ваша безопасность — мой приоритет</p>
+                </div>
+                <div class="advantage-item">
+                    <span class="advantage-icon">💎</span>
+                    <h3>Премиум материалы</h3>
+                    <p>Работаю только с профессиональными материалами высшего качества от проверенных брендов</p>
+                </div>
+                <div class="advantage-item">
+                    <span class="advantage-icon">🎯</span>
+                    <h3>Индивидуальный подход</h3>
+                    <p>Учитываю особенности ваших ногтей, образ жизни и личные пожелания для идеального результата</p>
+                </div>
+                <div class="advantage-item">
+                    <span class="advantage-icon">📍</span>
+                    <h3>Удобное расположение</h3>
+                    <p>Салон в ЖК Изумрудный город с удобной транспортной доступностью и парковкой</p>
+                </div>
+                <div class="advantage-item">
+                    <span class="advantage-icon">⏰</span>
+                    <h3>Гибкий график</h3>
+                    <p>Запись в удобное для вас время, включая выходные дни и вечерние часы</p>
+                </div>
+                <div class="advantage-item">
+                    <span class="advantage-icon">💚</span>
+                    <h3>Бережный уход</h3>
+                    <p>Возможность натуральных покрытий и укрепления для здоровья ваших ногтей</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <h2 class="section-title">Отзывы клиентов</h2>
+        <div class="reviews-header">
+            <div class="rating-badge">
+                <div class="rating-number">5.0</div>
+                <div>
+                    <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="rating-text">Рейтинг на Авито</div>
+                </div>
+            </div>
+            <a href="https://www.avito.ru/kazan/predlozheniya_uslug/manikyur_pedikyur_kazan_2294482493" target="_blank" rel="noopener noreferrer" class="avito-link">
+                📝 Читать отзывы на Авито
+            </a>
+        </div>
+        <p style="text-align: center; color: var(--text-gray); margin-top: 2.5rem; font-size: 1.05rem; line-height: 1.8; max-width: 800px; margin-left: auto; margin-right: auto;">
+            Мои клиенты ценят качество работы, стерильность инструментов и индивидуальный подход.<br>
+            Каждый отзыв — это подтверждение моего профессионализма и любви к своему делу.
+        </p>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2 class="section-title">Портфолио работ</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/work1.jpg" alt="Маникюр с дизайном" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="gallery-item">
+                <img src="images/work2.jpg" alt="Маникюр с дизайном" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="gallery-item">
+                <img src="images/work3.jpg" alt="Маникюр с дизайном" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="gallery-item">
+                <img src="images/work4.jpg" alt="Маникюр с дизайном" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="gallery-item">
+               <img src="images/work5.jpg" alt="Маникюр с дизайном" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="gallery-item">
+                <img src="images/work6.jpg" alt="Маникюр с дизайном" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 2.5rem; color: var(--text-gray); font-size: 1rem;">
+            💡 Больше работ и актуальные фотографии смотрите в моем профиле на 
+            <a href="https://www.avito.ru/kazan/predlozheniya_uslug/manikyur_pedikyur_kazan_2294482493" target="_blank" style="color: var(--emerald); font-weight: 600; text-decoration: none;">Авито</a>
+        </p>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <h2>Записаться на процедуру</h2>
+        <p class="booking-subtitle">Выберите удобный способ связи для записи</p>
+        
+        <div class="contact-options">
+            <a href="tel:+79376260394" class="contact-btn phone-btn">
+                <span>📞</span>
+                <span class="btn-desktop">Позвонить: +7 937 626-03-94</span>
+                <span class="btn-mobile">Позвонить</span>
+            </a>
+            
+            <a href="https://t.me/leyla_bad" class="contact-btn telegram-btn" target="_blank" rel="noopener noreferrer">
+                <span>📱</span>
+                Записаться в Telegram
+            </a>
+            
+            <a href="https://www.avito.ru/kazan/predlozheniya_uslug/manikyur_pedikyur_kazan_2294482493" class="contact-btn avito-btn" target="_blank" rel="noopener noreferrer">
+                <span>💬</span>
+                Написать на Авито
+            </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <p style="color: var(--text-gray); font-size: 0.9rem; line-height: 1.6;">
+                💡 Рекомендую записываться заранее для выбора удобного времени.<br>
+                Отвечу на все ваши вопросы и подберу оптимальную процедуру.
+            </p>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="map-section">
+        <h2 class="section-title">Как добраться</h2>
+        <p style="text-align: center; color: var(--text-gray); margin-bottom: 1rem; font-size: 1.05rem;">
+            📍 г. Казань, ул. Салиха Батыева, 1 • Салон "Изумруд" • ЖК Изумрудный город
+        </p>
+        <div class="map-container">
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=49.246760%2C55.751372&z=16&pt=49.246760,55.751372,pm2rdm" allowfullscreen="true"></iframe>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contacts" class="contacts">
+        <div class="contacts-container">
+            <div class="contact-item">
+                <h3>📍 Адрес салона</h3>
+                <p>
+                    г. Казань<br>
+                    ул. Салиха Батыева, 1<br>
+                    Салон "Изумруд"<br>
+                    ЖК Изумрудный город
+                </p>
+            </div>
+            <div class="contact-item">
+                <h3>📞 Контакты</h3>
+                <p>
+                    <a href="tel:+79376260394">+7 937 626-03-94</a><br>
+                    Запись по телефону,<br>
+                    Telegram или Авито
+                </p>
+            </div>
+            <div class="contact-item">
+                <h3>⏰ График работы</h3>
+                <p>
+                    По предварительной записи<br>
+                    Включая выходные дни<br>
+                    Продолжительность: 1.5-2 часа
+                </p>
+            </div>
+            <div class="contact-item">
+                <h3>💬 Следите за новостями</h3>
+                
+                <!-- OS Dock для социальных сетей -->
+                <div class="social-dock">
+                    <a href="https://t.me/leyla_bad" class="social-dock-item telegram" target="_blank" rel="noopener noreferrer" data-label="Telegram">
+                        <svg class="social-icon-telegram" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                        </svg>
+                    </a>
+                    <a href="https://m.vk.com/leyla_nogti" class="social-dock-item vk" target="_blank" rel="noopener noreferrer" data-label="ВКонтакте">
+                        <svg class="social-icon-vk" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.54 12.2c.4.4.82.77 1.15 1.2.15.18.28.38.38.6.14.31.01.65-.26.67l-1.7.01c-.45.04-.83-.14-1.14-.45-.25-.25-.48-.52-.72-.78-.1-.11-.21-.21-.33-.3-.23-.16-.43-.12-.58.12-.15.25-.18.53-.2.81-.02.41-.14.52-.55.54-.88.04-1.72-.09-2.5-.52-.67-.37-1.18-.91-1.63-1.53-.87-1.2-1.53-2.52-2.11-3.9-.12-.28-.03-.43.27-.44.5-.01 1-.01 1.5 0 .2.01.33.13.41.31.24.54.54 1.05.89 1.53.11.14.21.29.36.39.17.12.3.08.38-.11.05-.13.08-.27.1-.41.04-.42.05-.84-.01-1.26-.04-.28-.21-.46-.49-.52-.14-.03-.12-.09-.05-.18.11-.14.21-.23.41-.23h1.53c.24.05.29.16.33.4v1.71c-.01.1.05.38.22.44.14.04.23-.06.31-.15.38-.42.65-.92.9-1.43.11-.23.21-.47.31-.71.07-.17.19-.25.38-.25h1.8c.05 0 .11 0 .16.01.29.05.37.19.28.47-.14.44-.44.79-.73 1.14-.3.37-.62.72-.92 1.09-.27.33-.25.5.03.8z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.avito.ru/kazan/predlozheniya_uslug/manikyur_pedikyur_kazan_2294482493" class="social-dock-item avito" target="_blank" rel="noopener noreferrer" data-label="Авито">
+                        <svg class="social-icon-avito" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10.595" cy="5.225" r="3.325" fill="#965EEB"/>
+                            <circle cx="22.245" cy="7.235" r="7.235" fill="#0AF"/>
+                            <circle cx="8.9" cy="18.6" r="8.9" fill="#04E061"/>
+                            <circle cx="24.325" cy="21.005" r="5.375" fill="#FF4053"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <p style="margin-top: 1.5rem; font-size: 0.95rem;">
+                    Новые работы, акции<br>и специальные предложения
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Leyla Nogti. Профессиональный маникюр и педикюр в Казани</p>
+        <p style="margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.8;">
+            📍 ул. Салиха Батыева, 1, Салон "Изумруд"
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.7;">
+            Все права защищены
+        </p>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <button id="backToTop" class="back-to-top" aria-label="Вернуться наверх">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script>
+        // Плавная прокрутка для якорных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Анимация появления элементов при скролле
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .advantage-item, .gallery-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Эффект parallax для точек в hero-секции
+        document.addEventListener('mousemove', (e) => {
+            const dots = document.querySelectorAll('.dot');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            dots.forEach((dot, index) => {
+                const speed = (index + 1) * 0.5;
+                const xMove = (x - 0.5) * speed * 20;
+                const yMove = (y - 0.5) * speed * 20;
+                dot.style.transform = `translate(${xMove}px, ${yMove}px)`;
+            });
+        });
+
+        // Добавление анимации при загрузке страницы
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Кнопка "Наверх" - оптимизированная версия
+        (function() {
+            const backToTopButton = document.getElementById('backToTop');
+            let isVisible = false;
+
+            // Throttle функция для оптимизации
+            function throttle(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            }
+
+            // Проверка видимости кнопки
+            const toggleButtonVisibility = throttle(() => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 300 && !isVisible) {
+                    backToTopButton.classList.add('show');
+                    isVisible = true;
+                } else if (scrollTop <= 300 && isVisible) {
+                    backToTopButton.classList.remove('show');
+                    isVisible = false;
+                }
+            }, 100);
+
+            // Слушатель скролла
+            window.addEventListener('scroll', toggleButtonVisibility, { passive: true });
+
+            // Клик по кнопке
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
