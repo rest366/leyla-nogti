@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow:
+
+Host: https://leyla-nogti.ru
+Sitemap: https://leyla-nogti.ru/sitemap.xml
